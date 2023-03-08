@@ -111,5 +111,30 @@ defmodule Chess.GameTest do
 
       assert response == expected_response
     end
+
+    test "draw populate table" do
+      response =
+        Game.create_table()
+        |> IO.inspect()
+        |> Game.popular()
+        |> IO.inspect()
+        |> Game.print()
+        |> IO.inspect()
+
+      # "8 | T | C | B | D | R | B | C | T |\n" <>
+      expected_response =
+        "" <>
+          "8 |   |   |   |   |   |   |   |   |\n" <>
+          "7 | P | P | P | P | P | P | P | P |\n" <>
+          "6 |   |   |   |   |   |   |   |   |\n" <>
+          "5 |   |   |   |   |   |   |   |   |\n" <>
+          "4 |   |   |   |   |   |   |   |   |\n" <>
+          "3 |   |   |   |   |   |   |   |   |\n" <>
+          "2 | P | P | P | P | P | P | P | P |\n" <>
+          "1 |   |   |   |   |   |   |   |   |\n" <>
+          "    A   B   C   D   E   F   G   H"
+
+      assert response == expected_response
+    end
   end
 end

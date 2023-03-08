@@ -27,4 +27,21 @@ defmodule Chess.Cell do
       }) do
     create(name, piece, can_move, owner)
   end
+
+  def set_piece(
+        %__MODULE__{
+          name: name,
+          piece: _piece,
+          can_move: can_move,
+          owner: owner
+        },
+        piece
+      ) do
+    %__MODULE__{
+      name: name,
+      piece: piece,
+      can_move: can_move,
+      owner: owner
+    }
+  end
 end

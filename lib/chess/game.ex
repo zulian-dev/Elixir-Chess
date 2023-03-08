@@ -42,12 +42,28 @@ defmodule Chess.Game do
     end)
   end
 
-  def reduce_table(start, callback) do
-    Enum.reduce(cols(), start, fn col, table ->
-      Enum.reduce(rows(), table, fn row, acc ->
-        callback.(col, row, acc)
-      end)
-    end)
+  def popular(tabuleiro) do
+    tabuleiro
+    |> Chess.Piece.Peao.create("A2", 1)
+    |> Chess.Piece.Peao.create("B2", 1)
+    |> Chess.Piece.Peao.create("C2", 1)
+    |> Chess.Piece.Peao.create("D2", 1)
+    |> Chess.Piece.Peao.create("E2", 1)
+    |> Chess.Piece.Peao.create("F2", 1)
+    |> Chess.Piece.Peao.create("G2", 1)
+    |> Chess.Piece.Peao.create("H2", 1)
+    #
+    |> Chess.Piece.Peao.create("A7", 2)
+    |> Chess.Piece.Peao.create("B7", 2)
+    |> Chess.Piece.Peao.create("C7", 2)
+    |> Chess.Piece.Peao.create("D7", 2)
+    |> Chess.Piece.Peao.create("E7", 2)
+    |> Chess.Piece.Peao.create("F7", 2)
+    |> Chess.Piece.Peao.create("G7", 2)
+    |> Chess.Piece.Peao.create("H7", 2)
+  end
+
+  def possibilidades(tabuleiro, posicao) do
   end
 
   def cell_name(row, col) when is_atom(row), do: cell_name(Atom.to_string(row), col)
@@ -77,14 +93,14 @@ defmodule Chess.Game do
       str_row =
         Enum.reduce(rows, "", fn {_col_name, col}, col_acc ->
           %Chess.Cell{
-            piece: _piece,
+            piece: piece,
             can_move: _can_move,
             owner: _owner,
-            name: _name
+            name: name
           } = col
 
-          # col_acc <> "#{name} |"
-          col_acc <> "   |"
+          col_acc <> " #{(piece && piece) || " "} |"
+          # col_acc <> "   |"
         end)
 
       "#{row_acc}#{str_ini}#{str_row}\n"
