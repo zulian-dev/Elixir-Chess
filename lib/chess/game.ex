@@ -44,23 +44,42 @@ defmodule Chess.Game do
 
   def popular(tabuleiro) do
     tabuleiro
-    |> Chess.Piece.Peao.create("A2", 1)
-    |> Chess.Piece.Peao.create("B2", 1)
-    |> Chess.Piece.Peao.create("C2", 1)
-    |> Chess.Piece.Peao.create("D2", 1)
-    |> Chess.Piece.Peao.create("E2", 1)
-    |> Chess.Piece.Peao.create("F2", 1)
-    |> Chess.Piece.Peao.create("G2", 1)
-    |> Chess.Piece.Peao.create("H2", 1)
+    |> Chess.Piece.create("Torre", "A1", 1)
+    |> Chess.Piece.create("Cavalo", "B1", 1)
+    |> Chess.Piece.create("Bispo", "C1", 1)
+    |> Chess.Piece.create("Dama", "D1", 1)
+    |> Chess.Piece.create("Rei", "E1", 1)
+    |> Chess.Piece.create("Bispo", "F1", 1)
+    |> Chess.Piece.create("Cavalo", "G1", 1)
+    |> Chess.Piece.create("Torre", "H1", 1)
     #
-    |> Chess.Piece.Peao.create("A7", 2)
-    |> Chess.Piece.Peao.create("B7", 2)
-    |> Chess.Piece.Peao.create("C7", 2)
-    |> Chess.Piece.Peao.create("D7", 2)
-    |> Chess.Piece.Peao.create("E7", 2)
-    |> Chess.Piece.Peao.create("F7", 2)
-    |> Chess.Piece.Peao.create("G7", 2)
-    |> Chess.Piece.Peao.create("H7", 2)
+    |> Chess.Piece.create("Peao", "A2", 1)
+    |> Chess.Piece.create("Peao", "B2", 1)
+    |> Chess.Piece.create("Peao", "C2", 1)
+    |> Chess.Piece.create("Peao", "D2", 1)
+    |> Chess.Piece.create("Peao", "E2", 1)
+    |> Chess.Piece.create("Peao", "F2", 1)
+    |> Chess.Piece.create("Peao", "G2", 1)
+    |> Chess.Piece.create("Peao", "H2", 1)
+    #
+    |> Chess.Piece.create("Peao", "A7", 2)
+    |> Chess.Piece.create("Peao", "B7", 2)
+    |> Chess.Piece.create("Peao", "C7", 2)
+    |> Chess.Piece.create("Peao", "D7", 2)
+    |> Chess.Piece.create("Peao", "E7", 2)
+    |> Chess.Piece.create("Peao", "F7", 2)
+    |> Chess.Piece.create("Peao", "G7", 2)
+    |> Chess.Piece.create("Peao", "H7", 2)
+
+    #
+    |> Chess.Piece.create("Torre", "A8", 2)
+    |> Chess.Piece.create("Cavalo", "B8", 2)
+    |> Chess.Piece.create("Bispo", "C8", 2)
+    |> Chess.Piece.create("Dama", "D8", 2)
+    |> Chess.Piece.create("Rei", "E8", 2)
+    |> Chess.Piece.create("Bispo", "F8", 2)
+    |> Chess.Piece.create("Cavalo", "G8", 2)
+    |> Chess.Piece.create("Torre", "H8", 2)
   end
 
   def possibilidades(tabuleiro, posicao) do

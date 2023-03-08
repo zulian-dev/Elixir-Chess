@@ -124,14 +124,14 @@ defmodule Chess.GameTest do
       # "8 | T | C | B | D | R | B | C | T |\n" <>
       expected_response =
         "" <>
-          "8 |   |   |   |   |   |   |   |   |\n" <>
+          "8 | T | C | B | D | R | B | C | T |\n" <>
           "7 | P | P | P | P | P | P | P | P |\n" <>
           "6 |   |   |   |   |   |   |   |   |\n" <>
           "5 |   |   |   |   |   |   |   |   |\n" <>
           "4 |   |   |   |   |   |   |   |   |\n" <>
           "3 |   |   |   |   |   |   |   |   |\n" <>
           "2 | P | P | P | P | P | P | P | P |\n" <>
-          "1 |   |   |   |   |   |   |   |   |\n" <>
+          "1 | T | C | B | D | R | B | C | T |\n" <>
           "    A   B   C   D   E   F   G   H"
 
       assert response == expected_response
