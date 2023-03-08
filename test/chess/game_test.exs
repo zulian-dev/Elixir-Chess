@@ -115,11 +115,8 @@ defmodule Chess.GameTest do
     test "draw populate table" do
       response =
         Game.create_table()
-        |> IO.inspect()
         |> Game.popular()
-        |> IO.inspect()
         |> Game.print()
-        |> IO.inspect()
 
       # "8 | T | C | B | D | R | B | C | T |\n" <>
       expected_response =
